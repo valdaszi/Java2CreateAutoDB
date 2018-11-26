@@ -1,0 +1,46 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://localhost:8080/autodb/api/order
+Content-Type: application/json
+Accept: application/json
+
+{
+  "date": "2018-11-01", "no": "AAA 120000"
+}
+
+### Read
+
+GET http://localhost:8080/autodb/api/order/1
+Accept: application/json
+
+### Update
+
+PUT http://localhost:8080/autodb/api/order/3
+Content-Type: application/json
+Accept: application/json
+
+{
+  "date": "2018-10-31", "no": "AAB 120001"
+}
+
+###
+
+DELETE http://localhost:8080/autodb/api/order/3
+Accept: application/json
+
+###
+
+GET http://localhost:8080/autodb/api/order/totalPartsOrdered?from=2018-01-01&to=2018-11-30
+Accept: application/json
+
+###
+
+GET http://localhost:8080/autodb/api/order/test-query?from=2018-01-01&to=2018-11-30
+Accept: application/json
+
+###

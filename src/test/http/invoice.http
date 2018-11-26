@@ -1,0 +1,78 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+### Create
+
+POST http://localhost:8080/autodb/api/invoice
+Content-Type: application/json
+Accept: application/json
+
+{
+  "date": "2018-11-02", "serial": "AAA", "no": 991
+}
+
+### Read
+
+GET http://localhost:8080/autodb/api/invoice/1
+Accept: application/json
+
+### Update
+
+PUT http://localhost:8080/autodb/api/invoice/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "date": "2018-11-01",
+  "serial": "DDD",
+  "no": 999,
+  "version": 1,
+  "items": []
+}
+
+### Delete
+
+DELETE http://localhost:8080/autodb/api/invoice/1
+Accept: application/json
+
+### Add item
+
+POST http://localhost:8080/autodb/api/invoice/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "part": { "id": 1 }, "quantity": 2, "price": 16.29
+}
+
+### Update item
+
+PUT http://localhost:8080/autodb/api/invoice/1/3
+Content-Type: application/json
+Accept: application/json
+
+{
+  "part": { "id": 3 }, "quantity": 25, "price": 0.09
+}
+
+### Delete item
+
+DELETE http://localhost:8080/autodb/api/invoice/1/6
+Content-Type: application/json
+Accept: application/json
+
+### Report
+
+GET http://localhost:8080/autodb/api/invoice/total-parts?from=2018-01-01&to=2018-12-31
+Accept: application/json
+
+###
+
+GET http://localhost:8080/autodb/api/invoice/totals?from=2018-01-01&to=2018-12-31
+Accept: application/json
+
+###
